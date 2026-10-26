@@ -1,0 +1,51 @@
+[project]
+name = "bloom"
+version = "0.1.0"
+description = "A terminal coding agent built with LangChain, LangGraph and Gemini."
+readme = "README.md"
+authors = [
+    { name = "Immanuel Joseph" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "click>=8.1,<9",
+    "faiss-cpu>=1.15.1",
+    "fastapi>=0.162.0",
+    "langchain-core>=1.6.7",
+    "langchain-google-genai>=4.4.0",
+    "langgraph>=1.2.14",
+    "numpy>=2.4.6",
+    "pydantic>=2,<3",
+    "pydantic-ai-slim[google]>=2.46,<2.47",
+    "pydantic-settings>=2.4",
+    "python-dotenv>=1",
+    "uvicorn>=0.54.0",
+]
+
+[project.scripts]
+bloom = "bloom.cli:cli"
+
+[build-system]
+requires = ["uv_build>=0.12.1,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+    "ruff>=0.16.10",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "B", "UP", "SIM", "RUF"]
+
+
