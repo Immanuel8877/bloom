@@ -42,7 +42,7 @@ You need **Python 3.11+**, **[uv](https://docs.astral.sh/uv/)**, and a free Gemi
 [Google AI Studio](https://aistudio.google.com/apikey).
 
 ```bash
-git clone https://github.com/<your-username>/bloom.git
+git clone https://github.com/Immanuel8877/bloom.git
 cd bloom
 uv sync
 cp .env.example .env        # then open .env and paste your key after GEMINI_API_KEY=
